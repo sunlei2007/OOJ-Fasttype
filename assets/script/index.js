@@ -213,6 +213,7 @@ function createGameScene(){
     btnRetart.addEventListener("click", function () {
         
         count = 40;
+        pTime.style.color = "#5fb7f8";
         pScore.innerHTML = `Score: 0`;
         checkMsg.style.display = "none";
         pWord.innerHTML = getRandomWord();
