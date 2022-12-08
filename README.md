@@ -11,6 +11,6 @@ Click [here]( https://sunlei2007.github.io/OOJ-Fasttype/) to play
 2
 ## Description
 3
-  > Temperature converter API is used to convert Fahrenheit to Celsius and Celsius to Fahrenheit.
+  > Temperature converter API is used to convert Fahrenheit kkkkto Celsius and Celsius to Fahrenheit.
 4
 ## Call the API
