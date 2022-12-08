@@ -100,7 +100,7 @@ function createGameScene() {
     //Create time
     const pTime = document.createElement("p");
     pTime.classList.add("game-time");
-    pTime.innerHTML = "Time: 40";
+    pTime.innerHTML = "Time: 100";
     divGameHeader.appendChild(pTime);
 
     //Create game content
@@ -119,9 +119,12 @@ function createGameScene() {
     const inputValue = document.createElement("input");
     inputValue.classList.add("game-input");
     divGameContnet.appendChild(inputValue);
+    setTimeout(() => {
+        inputValue.focus();
+    }, 500);
 
     const checkMsg = document.createElement("i");
-    checkMsg.style.display = "none";
+    checkMsg.style.visibility = "hidden";
     checkMsg.style.marginTop = "20px";
     checkMsg.style.fontSize = "40px";
     divGameContnet.appendChild(checkMsg);
@@ -146,9 +149,14 @@ function createGameScene() {
     btnRetart.classList.add("home-restart");
     btnRetart.textContent = "Retart";
     divGameFooter.appendChild(btnRetart);
+    //end button
+    const btnEnd = document.createElement("button");
+    btnEnd.classList.add("home-restart");
+    btnEnd.textContent = "End";
+    divGameFooter.appendChild(btnEnd);
 
     //Control time
-    let count = 40;
+    let count = 100;
     let timer = window.setInterval(() => {
         count--;
         if (count > 0) {
@@ -157,14 +165,7 @@ function createGameScene() {
                 pTime.style.color = "red";
             }
         } else {
-            window.clearInterval(timer);
-            audioBg.pause();
-
-            saveScore(getDate(), score, ((score / arrWords.length) * 100).toFixed(1));
-
-            clearChild(mainDiv);//Remove all child;
-            const endScene = createEndScene();
-            mainDiv.appendChild(endScene);
+            btnEnd.click();
         }
     }, 1000);
 
@@ -182,10 +183,11 @@ function createGameScene() {
     let score = 0;
     inputValue.addEventListener("input", function () {
 
-        checkMsg.style.display = "none";
 
+        checkMsg.style.visibility = "hidden";
         if (pWord.innerHTML.substring(0, this.value.length).toLowerCase() !== this.value.toLowerCase()) {
-            checkMsg.style.display = "block";
+
+            checkMsg.style.visibility = "visible";
             checkMsg.style.color = "red";
             checkMsg.className = "fa-regular fa-circle-xmark";
 
@@ -197,8 +199,8 @@ function createGameScene() {
             pWord.style.color = getRandomColor();
         }
         else if (pWord.innerHTML.length === this.value.length) {
-            checkMsg.style.display = "block";
-            checkMsg.style.color = "green";
+            checkMsg.style.visibility = "visible";
+            checkMsg.style.color = "white";
             checkMsg.className = "fa-regular fa-circle-check";
 
             audioTrue.type = "audio/wav";
@@ -222,12 +224,24 @@ function createGameScene() {
 
         saveScore(getDate(), score, ((score / arrWords.length) * 100).toFixed(1));
         score = 0;
-        count = 40;
+        count = 100;
         pTime.style.color = "#5fb7f8";
         pScore.innerHTML = `Score: 0`;
-        checkMsg.style.display = "none";
+        checkMsg.style.visibility = "hidden";
         pWord.innerHTML = getRandomWord();
         inputValue.value = "";
+    });
+    //End game
+    btnEnd.addEventListener("click", function () {
+
+        window.clearInterval(timer);
+        audioBg.pause();
+
+        saveScore(getDate(), score, ((score / arrWords.length) * 100).toFixed(1));
+
+        clearChild(mainDiv);//Remove all child;
+        const endScene = createEndScene();
+        mainDiv.appendChild(endScene);
     });
     return divGame;
 }

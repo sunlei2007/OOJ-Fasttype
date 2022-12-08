@@ -24,7 +24,8 @@ main {
 .main-container {
     width: var(--app-main-width);
     height: var(--app-main-height);
-    background: url(../img/bg.png) no-repeat center center;
+    background: url(../img/giphy.gif) no-repeat center center;
+    background-size: cover;
     border-radius: 4px;
 }
 
@@ -41,7 +42,7 @@ main {
 .home-title {
     font-size: 80px;
     font-weight: 700;
-    color: var(--app-blue);
+    color: #fa730e;
     letter-spacing: 5px;
 }
 
@@ -65,7 +66,7 @@ main {
 .home-count {
     font-size: 120px;
     font-weight: 700;
-    color: var(--app-blue);
+    color: #fa730e;
 }
 
 .home-count-active {
@@ -139,6 +140,10 @@ main {
     justify-content: center;
     align-items: center;
 }
+
+    .game-footer button + button {
+        margin-left: 10px;
+    }
 
 .game-content {
     width: 100%;
@@ -226,7 +231,7 @@ main {
 .end-title {
     font-size: 26px;
     font-weight: 600;
-    color: var(--app-blue);
+    color: #fa730e;
     letter-spacing: 5px;
     margin-top: 10px;
 }
