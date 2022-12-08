@@ -312,7 +312,7 @@ function saveScore(date, hits, percentage) {
 //Get score
 function getScore() {
     let arr = [];
-    if (localStorage.getItem("scores")) {
+    if (localStorage.getItem("scores")!==null) {
         arr = JSON.parse(localStorage.getItem("scores"));
     }
     return arr;
