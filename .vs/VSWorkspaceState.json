@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\assets",
+    "\\assets\\script"
   ],
-  "SelectedNode": "\\C:\\Users\\sun\\Source\\Repos\\OOJ-Fasttype",
+  "SelectedNode": "\\assets\\script\\index.js",
   "PreviewInSolutionExplorer": false
 }

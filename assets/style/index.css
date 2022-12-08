@@ -9,36 +9,42 @@
     --app-main-width: 800px;
     --app-main-height: 600px;
 }
-body{
-    background-color:#000;
+
+body {
+    background-color: #000;
 }
-main{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100%;
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
+
 .main-container {
     width: var(--app-main-width);
-    height: var(--app-main-height);   
+    height: var(--app-main-height);
     background: url(../img/bg.png) no-repeat center center;
     border-radius: 4px;
 }
+
 .home {
     width: 100%;
-    height: 100%;    
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 4px;
 }
+
 .home-title {
     font-size: 80px;
     font-weight: 700;
     color: var(--app-blue);
     letter-spacing: 5px;
 }
+
 .home-start {
     width: 100px;
     height: 50px;
@@ -52,14 +58,16 @@ main{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.home-start:hover {
-    background-color: #0f97fb;
-}
+    .home-start:hover {
+        background-color: #0f97fb;
+    }
+
 .home-count {
     font-size: 120px;
     font-weight: 700;
     color: var(--app-blue);
 }
+
 .home-count-active {
     animation: count .5s linear;
 }
@@ -69,12 +77,14 @@ main{
         transform: scale(.1);
         opacity: 1;
     }
+
     to {
         transform: scale(3.5);
         opacity: 0;
         display: none;
     }
 }
+
 .game {
     width: 100%;
     height: 100%;
@@ -82,6 +92,7 @@ main{
     flex-direction: column;
     border-radius: 4px;
 }
+
 .game-header {
     height: var(--app-header-footer-height);
     background-color: rgba(0,0,0,0.5);
@@ -91,6 +102,7 @@ main{
     padding-left: 60px;
     padding-right: 60px;
 }
+
 .game-header-active {
     animation: header-animation 0.5s linear;
 }
@@ -106,6 +118,7 @@ main{
         opacity: 1;
     }
 }
+
 .game-content-active {
     animation: game-content-animation 0.5s linear;
 }
@@ -119,20 +132,23 @@ main{
         opacity: 1;
     }
 }
+
 .game-footer {
     height: var(--app-header-footer-height);
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .game-content {
     width: 100%;
-    height: calc(var(--app-main-height)  - 2 * var(--app-header-footer-height));
+    height: calc(var(--app-main-height) - 2 * var(--app-header-footer-height));
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
 .game-score {
     width: 200px;
     line-height: 100%;
@@ -140,19 +156,22 @@ main{
     font-size: 36px;
     font-weight: 500;
 }
+
 .game-time {
     width: 200px;
-    text-align:right;
+    text-align: right;
     line-height: 100%;
     color: var(--app-blue);
     font-size: 36px;
     font-weight: 500;
 }
+
 .game-word {
     color: #fa730e;
     font-size: 60px;
     font-weight: 700;
 }
+
 .game-word-active {
     animation: game-word-animation 0.5s;
     animation-iteration-count: infinite;
@@ -161,14 +180,13 @@ main{
 @keyframes game-word-animation {
     from {
         transform: scale(1);
-         
     }
 
     to {
         transform: scale(1.2);
-        
     }
 }
+
 .game-input {
     font-size: 20px;
     width: 300px;
@@ -178,8 +196,9 @@ main{
     border-radius: 4px;
     margin-top: 60px;
     background-color: #b9e0fe;
-    text-transform:lowercase;
+    text-transform: lowercase;
 }
+
 .home-restart {
     width: 100px;
     height: 50px;
@@ -191,6 +210,46 @@ main{
     border-radius: 4px;
 }
 
-.home-restart:hover {
-    background-color: #0f97fb;
+    .home-restart:hover {
+        background-color: #0f97fb;
+    }
+
+.end {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 4px;
 }
+
+.end-title {
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--app-blue);
+    letter-spacing: 5px;
+    margin-top: 10px;
+}
+
+.end-div-background {
+    width: 400px;
+    height: 400px;
+    background-color: rgba(0,0,0,0.5);
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+.end-table {
+    width: 100%;
+}
+
+    .end-table tr {
+        height: 30px;
+    }
+
+    .end-table td {
+        font-size: 20px;
+        text-align: center;
+        width: 33%;
+        color: var(--app-blue);
+    }
