@@ -10,6 +10,6 @@ Click [here]( https://sunlei2007.github.io/OOJ-Fasttype/) to play
 # Temperature converter
 
 ## Description
-
+Complete the given typing within the specified time.
 ## Call the API
 Click [here]( https://sunlei2007.github.io/OOJ-Fasttype/) to play  
